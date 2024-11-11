@@ -20,9 +20,10 @@ public class DemoUtilsTests {
     }
 
     @Test
-    public void testNotNull() {
+    public void testNullAndNotNull() {
 
         Assertions.assertNotNull(demoUtils.checkNull(5));
+        Assertions.assertNull(demoUtils.checkNull(null));
     }
 
 }
