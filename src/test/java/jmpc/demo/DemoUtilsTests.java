@@ -28,12 +28,14 @@ public class DemoUtilsTests {
     }
 
     @Test
+    @DisplayName("Equals and Not Equals")
     public void testEqualsAndNotEquals() {
 
         Assertions.assertEquals(6, demoUtils.add(2, 4), "2+4 must be 6");
     }
 
     @Test
+    @DisplayName("Null and Not Null")
     public void testNullAndNotNull() {
 
         Assertions.assertNotNull(demoUtils.checkNull(5));
