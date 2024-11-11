@@ -2,6 +2,7 @@ package jmpc.demo;
 
 import org.junit.jupiter.api.*;
 
+@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 public class DemoUtilsTests {
 
     private DemoUtils demoUtils;
@@ -35,8 +36,8 @@ public class DemoUtilsTests {
     }
 
     @Test
-    @DisplayName("Null and Not Null")
-    public void testNullAndNotNull() {
+//    @DisplayName("Null and Not Null")
+    public void test_null_and_not_null() {
 
         Assertions.assertNotNull(demoUtils.checkNull(5));
         Assertions.assertNull(demoUtils.checkNull(null));
