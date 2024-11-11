@@ -1,8 +1,6 @@
 package jmpc.demo;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class DemoUtilsTests {
 
@@ -10,7 +8,23 @@ public class DemoUtilsTests {
 
     @BeforeEach
     public void setup() {
+        System.out.println("@BeforeEach method executed.");
         demoUtils = new DemoUtils();
+    }
+
+    @AfterEach
+    public void cleanUp() {
+        System.out.println("@AfterEach method executed.");
+    }
+
+    @BeforeAll
+    public static void beforeAll() {
+        System.out.println("@BeforeAll method executed.");
+    }
+
+    @AfterAll
+    public static void afterAll() {
+        System.out.println("@AfterAll method executed.");
     }
 
     @Test
