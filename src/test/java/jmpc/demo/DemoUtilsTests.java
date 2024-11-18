@@ -1,6 +1,8 @@
 package jmpc.demo;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.OS;
 
 import java.time.Duration;
 import java.util.List;
@@ -116,5 +118,33 @@ public class DemoUtilsTests {
     @DisplayName("Multiplication")
     public void testMultiplication() {
         Assertions.assertEquals(6, demoUtils.multiply(2, 3), "2 x 3 = 6");
+    }
+
+    @Test
+    @Disabled
+    @DisplayName("Disabled")
+    public void basicTest() {
+
+    }
+
+    @Test
+    @EnabledOnOs(OS.WINDOWS)
+    @DisplayName("Only For Windows")
+    public void onlyForWindows() {
+
+    }
+
+    @Test
+    @EnabledOnOs(OS.LINUX)
+    @DisplayName("Only For Linux")
+    public void onlyForLinux() {
+
+    }
+
+    @Test
+    @EnabledOnOs({OS.WINDOWS, OS.LINUX})
+    @DisplayName("Only For Windows And Linux")
+    public void onlyForWindowsAndLinux() {
+
     }
 }
