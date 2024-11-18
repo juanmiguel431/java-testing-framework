@@ -3,10 +3,10 @@ package jmpc.demo;
 import org.junit.jupiter.api.*;
 
 import java.time.Duration;
-import java.time.temporal.TemporalUnit;
 import java.util.List;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class DemoUtilsTests {
 
     private DemoUtils demoUtils;
