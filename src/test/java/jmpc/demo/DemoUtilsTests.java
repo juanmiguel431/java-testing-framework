@@ -111,4 +111,10 @@ public class DemoUtilsTests {
 
         Assertions.assertTimeout(Duration.ofSeconds(3), () -> demoUtils.checkTimeout(), "Method should execute in less than 3 seconds.");
     }
+
+    @Test
+    @DisplayName("Multiplication")
+    public void testMultiplication() {
+        Assertions.assertEquals(6, demoUtils.multiply(2, 3), "2 x 3 = 6");
+    }
 }
