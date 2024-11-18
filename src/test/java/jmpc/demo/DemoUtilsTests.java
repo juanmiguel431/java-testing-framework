@@ -162,14 +162,14 @@ public class DemoUtilsTests {
     }
 
     @Test
-    @EnabledIfSystemProperty(named = "", matches = "")
+    @EnabledIfSystemProperty(named = "JMPC_SYS_PROP", matches = "Juan")
     @DisplayName("Enabled If System Property")
     public void enabledIfSystemProperty() {
 
     }
 
     @Test
-    @EnabledIfEnvironmentVariable(named = "", matches = "")
+    @EnabledIfEnvironmentVariable(named = "JMPC_ENV", matches = "DEV")
     @DisplayName("Enabled If Environment Variable")
     public void enabledIfEnvironmentVariable() {
 
