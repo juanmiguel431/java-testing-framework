@@ -1,7 +1,9 @@
 package jmpc.demo;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.condition.EnabledOnJre;
 import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.condition.JRE;
 import org.junit.jupiter.api.condition.OS;
 
 import java.time.Duration;
@@ -145,6 +147,13 @@ public class DemoUtilsTests {
     @EnabledOnOs({OS.WINDOWS, OS.LINUX})
     @DisplayName("Only For Windows And Linux")
     public void onlyForWindowsAndLinux() {
+
+    }
+
+    @Test
+    @EnabledOnJre(JRE.JAVA_17)
+    @DisplayName("Only For JAVA 17")
+    public void onlyJava17() {
 
     }
 }
