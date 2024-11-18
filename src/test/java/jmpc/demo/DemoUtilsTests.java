@@ -62,4 +62,13 @@ public class DemoUtilsTests {
 
         Assertions.assertNotSame(lastName1, lastName2, "Values must be different.");
     }
+
+    @Test
+    @DisplayName("Array Equals")
+    public void testArrayEquals() {
+        String[] items = { "A", "B", "C" };
+        var demo = demoUtils.getFirstThreeLettersOfAlphabet();
+
+        Assertions.assertArrayEquals(items, demo, "Arrays should be equals");
+    }
 }
