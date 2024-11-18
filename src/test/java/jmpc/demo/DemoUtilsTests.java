@@ -2,6 +2,8 @@ package jmpc.demo;
 
 import org.junit.jupiter.api.*;
 
+import java.time.Duration;
+import java.time.temporal.TemporalUnit;
 import java.util.List;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
@@ -98,5 +100,12 @@ public class DemoUtilsTests {
 
         Assertions.assertThrows(Exception.class, () -> demoUtils.throwException(-1), "It should throw exception");
         Assertions.assertDoesNotThrow(() -> demoUtils.throwException(1), "It should not throw exception");
+    }
+
+    @Test
+    @DisplayName("Timeout")
+    public void testTimeout() {
+
+        Assertions.assertTimeout(Duration.ofSeconds(3), () -> demoUtils.checkTimeout(), "Method should execute in less than 3 seconds.");
     }
 }
