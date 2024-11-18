@@ -82,4 +82,13 @@ public class DemoUtilsTests {
 
         Assertions.assertIterableEquals(items, demo, "Iterable elements should be equals");
     }
+
+    @Test
+    @DisplayName("Lines Match")
+    public void testLinesMatch() {
+        List<String> items = List.of("luv", "2", "code");
+        var demo = demoUtils.getAcademyInList();
+
+        Assertions.assertLinesMatch(items, demo, "Lines should match");
+    }
 }
