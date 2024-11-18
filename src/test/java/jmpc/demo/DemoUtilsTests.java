@@ -91,4 +91,12 @@ public class DemoUtilsTests {
 
         Assertions.assertLinesMatch(items, demo, "Lines should match");
     }
+
+    @Test
+    @DisplayName("Throws and Does not throw exception")
+    public void testThrowsAndDoesNotThrows() {
+
+        Assertions.assertThrows(Exception.class, () -> demoUtils.throwException(-1), "It should throw exception");
+        Assertions.assertDoesNotThrow(() -> demoUtils.throwException(1), "It should not throw exception");
+    }
 }
