@@ -1,10 +1,7 @@
 package jmpc.demo;
 
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.condition.EnabledOnJre;
-import org.junit.jupiter.api.condition.EnabledOnOs;
-import org.junit.jupiter.api.condition.JRE;
-import org.junit.jupiter.api.condition.OS;
+import org.junit.jupiter.api.condition.*;
 
 import java.time.Duration;
 import java.util.List;
@@ -154,6 +151,13 @@ public class DemoUtilsTests {
     @EnabledOnJre(JRE.JAVA_17)
     @DisplayName("Only For JAVA 17")
     public void onlyJava17() {
+
+    }
+
+    @Test
+    @EnabledForJreRange(min = JRE.JAVA_17, max = JRE.JAVA_22)
+    @DisplayName("Only For JAVA 17 and JAVA 22")
+    public void onlyJava17And22() {
 
     }
 }
