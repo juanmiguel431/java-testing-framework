@@ -160,4 +160,18 @@ public class DemoUtilsTests {
     public void onlyJava17And22() {
 
     }
+
+    @Test
+    @EnabledIfSystemProperty(named = "", matches = "")
+    @DisplayName("Enabled If System Property")
+    public void enabledIfSystemProperty() {
+
+    }
+
+    @Test
+    @EnabledIfEnvironmentVariable(named = "", matches = "")
+    @DisplayName("Enabled If Environment Variable")
+    public void enabledIfEnvironmentVariable() {
+
+    }
 }
