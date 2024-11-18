@@ -46,13 +46,9 @@ public class DemoUtilsTests {
     @Test
     @DisplayName("Same and Not Same - String literals")
     public void testSameAndNotSameV1() {
-
         // Both values will reference the same objet.
         var firstName1 = "Juan";
         var firstName2 = "Juan";
-
-        var lastName1 = new String("Paulino");
-        var lastName2 = new String("Paulino");
 
         Assertions.assertSame(firstName1, firstName2, "Objects should refer to the same objects");
         Assertions.assertNotSame(5, 6, "Values must be different.");
