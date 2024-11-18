@@ -6,7 +6,7 @@ import java.time.Duration;
 import java.util.List;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-@TestMethodOrder(MethodOrderer.MethodName.class)
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class) // Small numbers have higher priority.
 public class DemoUtilsTests {
 
     private DemoUtils demoUtils;
@@ -32,6 +32,7 @@ public class DemoUtilsTests {
         System.out.println("@AfterAll method executed.");
     }
 
+    @Order(3)
     @Test
     @DisplayName("Equals and Not Equals")
     public void testEqualsAndNotEquals() {
@@ -39,6 +40,7 @@ public class DemoUtilsTests {
         Assertions.assertEquals(6, demoUtils.add(2, 4), "2+4 must be 6");
     }
 
+    @Order(2)
     @Test
 //    @DisplayName("Null and Not Null")
     public void test_null_and_not_null() {
@@ -47,6 +49,7 @@ public class DemoUtilsTests {
         Assertions.assertNull(demoUtils.checkNull(null));
     }
 
+    @Order(1)
     @Test
     @DisplayName("Same and Not Same - String literals")
     public void testSameAndNotSameV1() {
