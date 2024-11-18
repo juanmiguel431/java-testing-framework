@@ -2,6 +2,8 @@ package jmpc.demo;
 
 import org.junit.jupiter.api.*;
 
+import java.util.List;
+
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 public class DemoUtilsTests {
 
@@ -70,5 +72,14 @@ public class DemoUtilsTests {
         var demo = demoUtils.getFirstThreeLettersOfAlphabet();
 
         Assertions.assertArrayEquals(items, demo, "Arrays should be equals");
+    }
+
+    @Test
+    @DisplayName("Iterable Equals")
+    public void testIterableEquals() {
+        List<String> items = List.of("luv", "2", "code");
+        var demo = demoUtils.getAcademyInList();
+
+        Assertions.assertIterableEquals(items, demo, "Iterable elements should be equals");
     }
 }
